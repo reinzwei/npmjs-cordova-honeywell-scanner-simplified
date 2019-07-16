@@ -95,7 +95,9 @@ public class HoneywellScannerPlugin extends CordovaPlugin implements BarcodeRead
         } else if (action.equals("claim")) {
             if (barcodeReader != null) {
                 try {
+                    this.callbackContext = callbackContext;
                     barcodeReader.claim();
+                    this.callbackContext.success();
                 } catch (ScannerUnavailableException e) {
                     e.printStackTrace();
                     NotifyError("Scanner unavailable");
@@ -114,7 +116,9 @@ public class HoneywellScannerPlugin extends CordovaPlugin implements BarcodeRead
             }
         } else if (action.equals("release")) {
             if (barcodeReader != null) {
+                this.callbackContext = callbackContext;
                 barcodeReader.release();
+                this.callbackContext.success();
             }
             if (barcodeReader != null) {
                 try {

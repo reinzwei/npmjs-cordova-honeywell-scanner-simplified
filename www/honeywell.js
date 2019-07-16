@@ -1,8 +1,8 @@
 var execute = require("cordova/exec");
 
 var honeywell = {
-    softwareTriggerStart: function () {
-        return execute(null, null, 'HoneywellScannerPlugin', 'softwareTriggerStart', []);
+    softwareTriggerStart: function (res, err) {
+        return execute(res, err, 'HoneywellScannerPlugin', 'softwareTriggerStart', []);
     },
     softwareTriggerStop: function () {
         return execute(null, null, 'HoneywellScannerPlugin', 'softwareTriggerStop', []);
@@ -19,11 +19,11 @@ var honeywell = {
     release: function () { // DEPRECATION WARNING: This will be removed in the next major release, use nativeRelease
         return execute(null, null, 'HoneywellScannerPlugin', 'release', []);
     },
-    nativeClaim: function () {
-        return execute(null, null, 'HoneywellScannerPlugin', 'claim', []);
+    nativeClaim: function (res, err) {
+        return execute(res, err, 'HoneywellScannerPlugin', 'claim', []);
     },
-    claim: function () { // DEPRECATION WARNING: This will be removed in the next major release, use nativeRelease
-        return execute(null, null, 'HoneywellScannerPlugin', 'claim', []);
+    claim: function (res, err) { // DEPRECATION WARNING: This will be removed in the next major release, use nativeRelease
+        return execute(res, err, 'HoneywellScannerPlugin', 'claim', []);
     }
 };
 
